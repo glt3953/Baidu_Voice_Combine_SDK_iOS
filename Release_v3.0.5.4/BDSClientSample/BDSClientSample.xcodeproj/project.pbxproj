@@ -500,6 +500,7 @@
 				TargetAttributes = {
 					E1ADE7191D1D00D700861693 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 3KQG33P93J;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -693,7 +694,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Haiyuan Tang (CX9FD89CUQ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3KQG33P93J;
 				INFOPLIST_FILE = BDSClientSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -712,7 +713,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Haiyuan Tang (CX9FD89CUQ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3KQG33P93J;
 				INFOPLIST_FILE = BDSClientSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

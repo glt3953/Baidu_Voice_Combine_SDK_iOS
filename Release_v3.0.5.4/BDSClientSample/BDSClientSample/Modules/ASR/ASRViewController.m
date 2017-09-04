@@ -17,10 +17,10 @@
 #import "fcntl.h"
 #import "AudioInputStream.h"
 
-#error "Config Your Api Key and Secret Key"
-const NSString* API_KEY = @"";
-const NSString* SECRET_KEY = @"";
-const NSString* APP_ID = @"";
+//#error "Config Your Api Key and Secret Key"
+const NSString* API_KEY = @"fERVROo5MeYFt3aNwih24tNP";
+const NSString* SECRET_KEY = @"1d5c9e8c0d36d15d557c4abdccff88a7";
+const NSString* APP_ID = @"8437071";
 
 @interface ASRViewController () <BDSClientASRDelegate, BDSClientWakeupDelegate, BDRecognizerViewDelegate, UIActionSheetDelegate>
 
