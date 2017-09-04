@@ -13,12 +13,12 @@
 #import "BDVRCustomRecognitonViewController.h"
 #import "BDVRUIPromptTextCustom.h"
 
-#error 请修改为您在百度开发者平台申请的API_KEY和SECRET_KEY
-#define API_KEY @"" // 请修改为您在百度开发者平台申请的API_KEY
-#define SECRET_KEY @"" // 请修改您在百度开发者平台申请的SECRET_KEY
+//#error 请修改为您在百度开发者平台申请的API_KEY和SECRET_KEY
+#define API_KEY @"fERVROo5MeYFt3aNwih24tNP" // 请修改为您在百度开发者平台申请的API_KEY
+#define SECRET_KEY @"1d5c9e8c0d36d15d557c4abdccff88a7" // 请修改您在百度开发者平台申请的SECRET_KEY
 
-#error 请修改为您在百度开发者平台申请的APP ID
-#define APPID @"" // 请修改为您在百度开发者平台申请的APP ID
+//#error 请修改为您在百度开发者平台申请的APP ID
+#define APPID @"8437071" // 请修改为您在百度开发者平台申请的APP ID
 
 @implementation BDVRViewController
 
@@ -392,28 +392,28 @@
     // 加载离线识别引擎
     NSString* appCode = APPID;
 //    NSString* licenseFilePath= [[NSBundle mainBundle] pathForResource:@"bdasr_temp_license" ofType:@"dat"];
-    NSString* datFilePath = [[NSBundle mainBundle] pathForResource:@"s_1" ofType:@""];
-    NSString* LMDatFilePath = nil;
-    if ([[BDVRSConfig sharedInstance].recognitionProperty intValue] == EVoiceRecognitionPropertyMap) {
-        LMDatFilePath = [[NSBundle mainBundle] pathForResource:@"s_2_Navi" ofType:@""];
-    } else if ([[BDVRSConfig sharedInstance].recognitionProperty intValue] == EVoiceRecognitionPropertyInput) {
-        LMDatFilePath = [[NSBundle mainBundle] pathForResource:@"s_2_InputMethod" ofType:@""];
-    }
-    
-    NSDictionary* recogGrammSlot = @{@"$name_CORE" : @"张三\n李四\n",
-                                    @"$song_CORE" : @"小苹果\n朋友\n",
-                                    @"$app_CORE" : @"QQ\n百度\n微信\n百度地图\n",
-                                    @"$artist_CORE" : @"刘德华\n周华健\n"};
-    
-    int ret = [[BDVoiceRecognitionClient sharedInstance] loadOfflineEngine:appCode
-                                                                   license:nil
-                                                                   datFile:datFilePath
-                                                                 LMDatFile:LMDatFilePath
-                                                                 grammSlot:recogGrammSlot];
-    if (0 != ret) {
-        NSLog(@"load offline engine failed: %d", ret);
-        return;
-    }
+//    NSString* datFilePath = [[NSBundle mainBundle] pathForResource:@"s_1" ofType:@""];
+//    NSString* LMDatFilePath = nil;
+//    if ([[BDVRSConfig sharedInstance].recognitionProperty intValue] == EVoiceRecognitionPropertyMap) {
+//        LMDatFilePath = [[NSBundle mainBundle] pathForResource:@"s_2_Navi" ofType:@""];
+//    } else if ([[BDVRSConfig sharedInstance].recognitionProperty intValue] == EVoiceRecognitionPropertyInput) {
+//        LMDatFilePath = [[NSBundle mainBundle] pathForResource:@"s_2_InputMethod" ofType:@""];
+//    }
+//    
+//    NSDictionary* recogGrammSlot = @{@"$name_CORE" : @"张三\n李四\n",
+//                                    @"$song_CORE" : @"小苹果\n朋友\n",
+//                                    @"$app_CORE" : @"QQ\n百度\n微信\n百度地图\n",
+//                                    @"$artist_CORE" : @"刘德华\n周华健\n"};
+//    
+//    int ret = [[BDVoiceRecognitionClient sharedInstance] loadOfflineEngine:appCode
+//                                                                   license:nil
+//                                                                   datFile:datFilePath
+//                                                                 LMDatFile:LMDatFilePath
+//                                                                 grammSlot:recogGrammSlot];
+//    if (0 != ret) {
+//        NSLog(@"load offline engine failed: %d", ret);
+//        return;
+//    }
     
     // 创建语音识别界面，在其viewdidload方法中启动语音识别
     BDVRCustomRecognitonViewController *tmpAudioViewController = [[BDVRCustomRecognitonViewController alloc] initWithNibName:nil bundle:nil];

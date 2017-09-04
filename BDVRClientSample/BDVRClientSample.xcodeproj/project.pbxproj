@@ -459,6 +459,12 @@
 				CLASSPREFIX = BDVR;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Baidu;
+				TargetAttributes = {
+					832D56F517F1621E00D3FD82 = {
+						DevelopmentTeam = 3KQG33P93J;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 832D56F117F1621E00D3FD82 /* Build configuration list for PBXProject "BDVRClientSample" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -604,7 +610,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Haiyuan Tang (CX9FD89CUQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Haiyuan Tang (CX9FD89CUQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3KQG33P93J;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BDVRClientSample/BDVRClientSample-Prefix.pch";
 				INFOPLIST_FILE = "BDVRClientSample/BDVRClientSample-Info.plist";
@@ -616,6 +623,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AdHoc;
@@ -688,7 +696,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Haiyuan Tang (CX9FD89CUQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Haiyuan Tang (CX9FD89CUQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3KQG33P93J;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BDVRClientSample/BDVRClientSample-Prefix.pch";
 				INFOPLIST_FILE = "BDVRClientSample/BDVRClientSample-Info.plist";
@@ -700,6 +709,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -710,7 +720,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Haiyuan Tang (CX9FD89CUQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Haiyuan Tang (CX9FD89CUQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3KQG33P93J;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BDVRClientSample/BDVRClientSample-Prefix.pch";
 				INFOPLIST_FILE = "BDVRClientSample/BDVRClientSample-Info.plist";
@@ -722,6 +733,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
