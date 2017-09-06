@@ -62,6 +62,7 @@
 		E1ADE7F31D1D0ACF00861693 /* tts_text.txt in Resources */ = {isa = PBXBuildFile; fileRef = E1ADE7D81D1D0ACF00861693 /* tts_text.txt */; };
 		E1ADE7F41D1D0ACF00861693 /* TTSMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1ADE7D91D1D0ACF00861693 /* TTSMain.storyboard */; };
 		E1ADE7F51D1D0ACF00861693 /* TTSViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1ADE7DB1D1D0ACF00861693 /* TTSViewController.mm */; };
+		F33FEF331F5FE79600512F57 /* 47a5aa4f-dfb5-42a5-9b2f-1d86db0b5332.pcm in Resources */ = {isa = PBXBuildFile; fileRef = F33FEF321F5FE79600512F57 /* 47a5aa4f-dfb5-42a5-9b2f-1d86db0b5332.pcm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +166,7 @@
 		E1ADE7DA1D1D0ACF00861693 /* TTSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSViewController.h; sourceTree = "<group>"; };
 		E1ADE7DB1D1D0ACF00861693 /* TTSViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TTSViewController.mm; sourceTree = "<group>"; };
 		E1E707831D6ADFE600741470 /* BDSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSEventManager.h; sourceTree = "<group>"; };
+		F33FEF321F5FE79600512F57 /* 47a5aa4f-dfb5-42a5-9b2f-1d86db0b5332.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "47a5aa4f-dfb5-42a5-9b2f-1d86db0b5332.pcm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +345,7 @@
 		E1ADE76B1D1D071C00861693 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F33FEF321F5FE79600512F57 /* 47a5aa4f-dfb5-42a5-9b2f-1d86db0b5332.pcm */,
 				E1ADE76C1D1D07E200861693 /* 8k_test.pcm */,
 				E1ADE76D1D1D07E200861693 /* 16k_test.pcm */,
 				E1ADE7701D1D081E00861693 /* ASR */,
@@ -541,6 +544,7 @@
 				E17658671E8B594F00D711A5 /* bds_easr_mfe_cmvn.dat in Resources */,
 				E17658681E8B594F00D711A5 /* bds_easr_mfe_dnn.dat in Resources */,
 				E1837D5D1E97908900682651 /* bds_easr_dnn_wakeup_model.dat in Resources */,
+				F33FEF331F5FE79600512F57 /* 47a5aa4f-dfb5-42a5-9b2f-1d86db0b5332.pcm in Resources */,
 				E15E10E41D73FEE50026B6AD /* bds_easr_wakeup_words.dat in Resources */,
 				E1ADE7281D1D00D700861693 /* Main.storyboard in Resources */,
 				E1ADE76E1D1D07E200861693 /* 8k_test.pcm in Resources */,

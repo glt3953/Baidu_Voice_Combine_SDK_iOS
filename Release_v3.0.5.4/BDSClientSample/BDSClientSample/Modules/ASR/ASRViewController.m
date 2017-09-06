@@ -21,6 +21,7 @@
 const NSString* API_KEY = @"fERVROo5MeYFt3aNwih24tNP";
 const NSString* SECRET_KEY = @"1d5c9e8c0d36d15d557c4abdccff88a7";
 const NSString* APP_ID = @"8437071";
+static NSUInteger maxFileTestNum = 3;
 
 @interface ASRViewController () <BDSClientASRDelegate, BDSClientWakeupDelegate, BDRecognizerViewDelegate, UIActionSheetDelegate>
 
@@ -45,6 +46,12 @@ const NSString* APP_ID = @"8437071";
 
 @property(nonatomic, assign) BOOL longSpeechFlag;
 
+@property (nonatomic) NSInteger fileTestIndex; //文件测试序号
+@property (nonatomic, strong) NSDate *firstPkgDate; //发送第一包的时间戳
+@property (nonatomic, strong) NSDate *negativePkgDate; //发送负包的时间戳
+@property (nonatomic) double allTimeInterval; //批量跑完文件的累计耗时
+@property (nonatomic, copy) NSString *fileTestResult; //批量音频文件的识别结果
+
 @end
 
 @implementation ASRViewController
@@ -65,6 +72,10 @@ const NSString* APP_ID = @"8437071";
                                               cancelButtonTitle:@"Cancel"
                                          destructiveButtonTitle:nil
                                               otherButtonTitles:@"文件识别", @"音频流识别", @"内置UI", @"开始唤醒", @"结束唤醒", @"唤醒+识别", @"加载离线引擎", @"卸载离线引擎", @"长语音", nil];
+    
+    _fileTestIndex = 0;
+    _allTimeInterval = 0;
+    _fileTestResult = @"";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -131,8 +142,10 @@ const NSString* APP_ID = @"8437071";
 
 - (void)fileRecognition
 {
+    _firstPkgDate = [NSDate date];
+    _fileTestIndex++;
     [self cleanLogUI];
-    NSString* testFile = [[NSBundle mainBundle] pathForResource:@"16k_test" ofType:@"pcm"];
+    NSString* testFile = [[NSBundle mainBundle] pathForResource:@"47a5aa4f-dfb5-42a5-9b2f-1d86db0b5332" ofType:@"pcm"];
     [self.asrEventManager setParameter:testFile forKey:BDS_ASR_AUDIO_FILE_PATH];
     [self.asrEventManager setDelegate:self];
     [self.asrEventManager sendCommand:BDS_ASR_CMD_START];
@@ -304,6 +317,7 @@ const NSString* APP_ID = @"8437071";
         }
         case EVoiceRecognitionClientWorkStatusEnd: {
             [self printLogTextView:@"CALLBACK: detect voice end point.\n"];
+            _negativePkgDate = [NSDate date];
             break;
         }
         case EVoiceRecognitionClientWorkStatusFlushData: {
@@ -313,7 +327,20 @@ const NSString* APP_ID = @"8437071";
         case EVoiceRecognitionClientWorkStatusFinish: {
             [self printLogTextView:[NSString stringWithFormat:@"CALLBACK: final result - %@.\n\n", [self getDescriptionForDic:aObj]]];
             if (aObj) {
-                self.resultTextView.text = [self getDescriptionForDic:aObj];
+                NSTimeInterval allPkgTimeInterval = [[NSDate date] timeIntervalSinceDate:self.firstPkgDate];
+                _allTimeInterval += allPkgTimeInterval;
+                NSTimeInterval negativePkgTimeInterval = [[NSDate date] timeIntervalSinceDate:self.negativePkgDate];
+                static double allNegativePkgTimeInterval = 0;
+                allNegativePkgTimeInterval += negativePkgTimeInterval;
+                
+                _fileTestResult = [[NSString stringWithFormat:@"序号%ld，耗时：%.3f, 最后一包耗时：%.3f，识别结果：%@，最后一包累计耗时：%.3f，累计耗时：%.3f \n\n", (long)_fileTestIndex, allPkgTimeInterval, negativePkgTimeInterval, aObj[@"results_recognition"][0], allNegativePkgTimeInterval, _allTimeInterval] stringByAppendingString:_fileTestResult];
+                _resultTextView.text = _fileTestResult;
+                NSLog(@"文件批量测试结果：%@", _resultTextView.text);
+                
+                if (_fileTestIndex < maxFileTestNum) {
+                    [self performSelector:@selector(fileRecognition) withObject:nil afterDelay:0.3];  // 延迟0.3秒，以便识别工作正常结束
+                }
+//                self.resultTextView.text = [self getDescriptionForDic:aObj];
             }
             if (!self.longSpeechFlag) {
                 [self onEnd];
