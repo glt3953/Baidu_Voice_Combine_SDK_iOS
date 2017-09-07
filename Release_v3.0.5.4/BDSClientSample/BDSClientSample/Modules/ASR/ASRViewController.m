@@ -21,7 +21,7 @@
 const NSString* API_KEY = @"fERVROo5MeYFt3aNwih24tNP";
 const NSString* SECRET_KEY = @"1d5c9e8c0d36d15d557c4abdccff88a7";
 const NSString* APP_ID = @"8437071";
-static NSUInteger maxFileTestNum = 3;
+static NSUInteger maxFileTestNum = 0;
 
 @interface ASRViewController () <BDSClientASRDelegate, BDSClientWakeupDelegate, BDRecognizerViewDelegate, UIActionSheetDelegate>
 
